@@ -8,120 +8,170 @@
     /* Background & global font */
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at top, #111 0%, #000 100%);
-      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      color: #1d1d1f;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     /* Title styling */
     h1 {
       font-size: 3.5rem;
-      margin-bottom: 2rem;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      background: linear-gradient(90deg, #ff00ff, #00ffff, #ff9900);
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -2px;
+      color: #1d1d1f;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: glowText 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes glowText {
-      from { text-shadow: 0 0 10px #ff00ff; }
-      to { text-shadow: 0 0 25px #00ffff, 0 0 50px #ff00ff; }
+      background-clip: text;
     }
 
     /* Button base */
     .link-btn {
       display: inline-block;
-      margin: 15px;
-      padding: 16px 32px;
-      font-size: 1.3rem;
-      font-weight: bold;
+      margin: 12px;
+      padding: 16px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
       text-decoration: none;
-      border-radius: 12px;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
-      border: 2px solid transparent;
+      border-radius: 16px;
+      transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .link-btn:hover::before {
+      opacity: 1;
     }
 
     .link-btn:hover {
-      transform: scale(1.07) rotate(-1deg);
-      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
 
-    /* Specific buttons with neon effects */
+    .link-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Specific buttons with clean Apple-style colors */
     .instagram {
-      background: #E1306C;
+      background: rgba(225, 48, 108, 0.9);
       color: white;
-      border-color: #ff66a3;
+      box-shadow: 0 4px 15px rgba(225, 48, 108, 0.3);
     }
 
     .instagram:hover {
-      background: #ff4f8b;
-      box-shadow: 0 0 20px #E1306C, 0 0 40px #ff4f8b;
+      box-shadow: 0 8px 25px rgba(225, 48, 108, 0.4);
     }
 
     .cashapp {
-      background: #00C244;
+      background: rgba(0, 194, 68, 0.9);
       color: white;
-      border-color: #33ff99;
+      box-shadow: 0 4px 15px rgba(0, 194, 68, 0.3);
     }
 
     .cashapp:hover {
-      background: #00e65c;
-      box-shadow: 0 0 20px #00C244, 0 0 40px #00ff66;
+      box-shadow: 0 8px 25px rgba(0, 194, 68, 0.4);
     }
 
     .venmo {
-      background: #3D95CE;
+      background: rgba(61, 149, 206, 0.9);
       color: white;
-      border-color: #66ccff;
+      box-shadow: 0 4px 15px rgba(61, 149, 206, 0.3);
     }
 
     .venmo:hover {
-      background: #4da6ff;
-      box-shadow: 0 0 20px #3D95CE, 0 0 40px #66ccff;
+      box-shadow: 0 8px 25px rgba(61, 149, 206, 0.4);
     }
 
     /* Container for tipping links */
     .links {
-      margin-top: 40px;
+      margin-top: 32px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 8px;
+    }
+
+    /* Main content container */
+    .main-content {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      max-width: 500px;
+      width: 100%;
     }
 
     /* Footer */
     footer {
-      margin-top: 60px;
+      margin-top: 40px;
       font-size: 0.9rem;
-      color: #666;
-      letter-spacing: 1px;
+      color: #86868b;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .main-content {
+        padding: 32px 24px;
+        margin: 0 16px;
+      }
+      
+      .link-btn {
+        font-size: 1rem;
+        padding: 14px 24px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>DJ Lovd</h1>
+  <div class="main-content">
+    <h1>DJ Lovd</h1>
 
-  <!-- Instagram Link -->
-  <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="link-btn instagram">
-    🎵 Follow Me on Instagram
-  </a>
+    <!-- Instagram Link -->
+    <a href="https://www.instagram.com/eric.lovd/" target="_blank" class="link-btn instagram">
+    Follow Me on Instagram
+    </a>
 
-  <!-- Tipping Platforms -->
-  <div class="links">
-    <a href="https://cash.app/$YOURCASHAPPUSERNAME" target="_blank" class="link-btn cashapp">
-      💸 Tip on CashApp
-    </a>
-    <a href="https://venmo.com/YOURVENMOUSERNAME" target="_blank" class="link-btn venmo">
-      💳 Tip on Venmo
-    </a>
+    <!-- Tipping Platforms -->
+    <div class="links">
+      <a href="https://cash.app/$ericlife791" target="_blank" class="link-btn cashapp">
+     Tip on CashApp
+      </a>
+      <a href="https://venmo.com/u/ericishekwene" target="_blank" class="link-btn venmo">
+        Tip on Venmo
+      </a>
+    </div>
   </div>
 
   <footer>
