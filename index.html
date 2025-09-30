@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DJ Lovd</title>
+  <style>
+    /* Background & global font */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #111 0%, #000 100%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    /* Title styling */
+    h1 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ff9900);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: glowText 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+      from { text-shadow: 0 0 10px #ff00ff; }
+      to { text-shadow: 0 0 25px #00ffff, 0 0 50px #ff00ff; }
+    }
+
+    /* Button base */
+    .link-btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 16px 32px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      border: 2px solid transparent;
+    }
+
+    .link-btn:hover {
+      transform: scale(1.07) rotate(-1deg);
+      box-shadow: 0 0 25px rgba(255,255,255,0.5);
+    }
+
+    /* Specific buttons with neon effects */
+    .instagram {
+      background: #E1306C;
+      color: white;
+      border-color: #ff66a3;
+    }
+
+    .instagram:hover {
+      background: #ff4f8b;
+      box-shadow: 0 0 20px #E1306C, 0 0 40px #ff4f8b;
+    }
+
+    .cashapp {
+      background: #00C244;
+      color: white;
+      border-color: #33ff99;
+    }
+
+    .cashapp:hover {
+      background: #00e65c;
+      box-shadow: 0 0 20px #00C244, 0 0 40px #00ff66;
+    }
+
+    .venmo {
+      background: #3D95CE;
+      color: white;
+      border-color: #66ccff;
+    }
+
+    .venmo:hover {
+      background: #4da6ff;
+      box-shadow: 0 0 20px #3D95CE, 0 0 40px #66ccff;
+    }
+
+    /* Container for tipping links */
+    .links {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #666;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <h1>DJ Lovd</h1>
+
+  <!-- Instagram Link -->
+  <a href="https://instagram.com/YOUR_INSTAGRAM_USERNAME" target="_blank" class="link-btn instagram">
+    🎵 Follow Me on Instagram
+  </a>
+
+  <!-- Tipping Platforms -->
+  <div class="links">
+    <a href="https://cash.app/$YOURCASHAPPUSERNAME" target="_blank" class="link-btn cashapp">
+      💸 Tip on CashApp
+    </a>
+    <a href="https://venmo.com/YOURVENMOUSERNAME" target="_blank" class="link-btn venmo">
+      💳 Tip on Venmo
+    </a>
+  </div>
+
+  <footer>
+    © 2025 DJ Lovd | Beats & Vibes
+  </footer>
+</body>
+</html>
